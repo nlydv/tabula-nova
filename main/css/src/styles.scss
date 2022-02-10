@@ -1,0 +1,39 @@
+html {
+    font-size: 16px;
+    color: white;
+    background-color: black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.625;
+
+    main, section {
+        display: flex;
+        flex-direction: row;
+    }
+
+    main {
+        flex: 3;
+        flex-wrap: wrap;
+
+        min-height: 40vh;
+        padding-left: 20vw;
+        padding-right: 20vw;
+
+        a {
+            background-color: white;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 6rem;
+            text-align: center;
+            margin: 2rem;
+        }
+    }
+
+    section {
+        flex: 1;
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Tabula Nova",
+    "description": "Bare bones static new tab page without all the frills and widgets and resource usage and trackers and blah blah blah.",
+    "author": "Neel Yadav",
+    "homepage_url": "https://github.com/nlydv/tabula-nova",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "permissions": [
+        "management"
+    ],
+    "chrome_url_overrides": {
+        "newtab": "main/index.html"
+    }
+}

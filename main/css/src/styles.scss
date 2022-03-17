@@ -1,39 +1,112 @@
+$diameter: 4.5; // rem
+$spacing: $diameter / 3;
+$row-height: $diameter + ($spacing * 2);
+$line-height: 1.625;
+
+// ——————————————————————————————————————————————————————
+
 html {
     font-size: 16px;
     color: white;
+
     background-color: black;
+    background-image: url("../img/wavey/shadow-light.jpeg");
+    background-size: 150% auto;
+    background-position: center;
+
+    overflow: clip;
 }
 
 body {
+    width: 100%;
+    height: 100%;
+
+    line-height: $line-height;
+}
+
+// ——————————————————————————————————————————————————————
+
+main {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
-    line-height: 1.625;
-
-    main, section {
-        display: flex;
-        flex-direction: row;
-    }
-
-    main {
-        flex: 3;
-        flex-wrap: wrap;
-
-        min-height: 40vh;
-        padding-left: 20vw;
-        padding-right: 20vw;
-
-        a {
-            background-color: white;
-            width: 6rem;
-            height: 6rem;
-            border-radius: 6rem;
-            text-align: center;
-            margin: 2rem;
-        }
-    }
+    width: 60vw;
+    max-height: 100vh;
+    padding: 10vw 20vw 0;
 
     section {
-        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        + section {
+            margin-top: 10vh;
+        }
+    }
+}
+
+section.search {
+    width: 100%;
+    padding: 5vh 0;
+
+    form input {
+        font-size: 1.5rem;
+
+        width: 35rem;
+        max-width: 100%;
+        height: 3rem;
+
+        margin: 0;
+        padding: 0 1rem;
+
+        border-color: transparent;
+        border-radius: 0.5rem;
+
+    }
+}
+
+section.bookmarks {
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+
+    width: 60vw;
+    height: 3 * $row-height + rem;
+
+    margin:
+        $row-height / 4 + rem
+        20vw
+        $row-height * 3 / 4 + rem
+        20vw;
+
+    a {
+        color: white;
+        // background-color: white;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 15%; // raidus -> 1/2 width => 50% border-radius -> 100% circle
+        object-fit: cover;
+
+        width: $diameter + rem;
+        height: $diameter + rem;
+        margin: $spacing + rem;
+
+        text-align: center;
+        text-decoration: none;
+
+        p {
+            font-size: $spacing / $line-height / $line-height + rem;
+
+            position: relative;
+            top: $diameter + rem;
+        }
     }
 }
